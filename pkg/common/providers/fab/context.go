@@ -9,7 +9,7 @@ package fab
 import (
 	reqContext "context"
 
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/options"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/options"
 )
 
 // ChannelService supplies services related to a channel.

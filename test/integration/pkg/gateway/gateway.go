@@ -14,12 +14,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
-	"github.com/hyperledger/fabric-sdk-go/pkg/gateway"
-	"github.com/hyperledger/fabric-sdk-go/test/integration"
-	"github.com/hyperledger/fabric-sdk-go/test/metadata"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/fab"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/core/config"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fabsdk"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/gateway"
+	"github.com/akorosmezey/fabric-sdk-go/test/integration"
+	"github.com/akorosmezey/fabric-sdk-go/test/metadata"
 )
 
 const (

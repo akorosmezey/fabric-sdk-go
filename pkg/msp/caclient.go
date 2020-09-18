@@ -10,11 +10,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/logging"
-	contextApi "github.com/hyperledger/fabric-sdk-go/pkg/common/providers/context"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/core"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
-	"github.com/hyperledger/fabric-sdk-go/pkg/msp/api"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/logging"
+	contextApi "github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/context"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/core"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/msp"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/msp/api"
 	"github.com/pkg/errors"
 )
 

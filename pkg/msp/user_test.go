@@ -11,13 +11,13 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric-ca/sdkinternal/pkg/util"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/core"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/config"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/cryptosuite"
-	cryptosuiteimpl "github.com/hyperledger/fabric-sdk-go/pkg/core/cryptosuite/bccsp/sw"
-	"github.com/hyperledger/fabric-sdk-go/test/metadata"
+	"github.com/akorosmezey/fabric-sdk-go/internal/github.com/hyperledger/fabric-ca/sdkinternal/pkg/util"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/core"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/msp"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/core/config"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/core/cryptosuite"
+	cryptosuiteimpl "github.com/akorosmezey/fabric-sdk-go/pkg/core/cryptosuite/bccsp/sw"
+	"github.com/akorosmezey/fabric-sdk-go/test/metadata"
 )
 
 func TestUserMethods(t *testing.T) {

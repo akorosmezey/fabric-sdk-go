@@ -9,8 +9,8 @@ package chconfig
 import (
 	"time"
 
-	coptions "github.com/hyperledger/fabric-sdk-go/pkg/common/options"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
+	coptions "github.com/akorosmezey/fabric-sdk-go/pkg/common/options"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/fab"
 )
 
 const (

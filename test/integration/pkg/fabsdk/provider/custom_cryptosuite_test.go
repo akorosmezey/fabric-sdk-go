@@ -11,17 +11,17 @@ import (
 
 	"fmt"
 
-	"github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp"
-	bccspSw "github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp/factory/sw"
-	"github.com/hyperledger/fabric-sdk-go/pkg/client/channel"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/errors/retry"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/core"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/cryptosuite"
-	"github.com/hyperledger/fabric-sdk-go/pkg/core/cryptosuite/bccsp/wrapper"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk/factory/defcore"
-	"github.com/hyperledger/fabric-sdk-go/test/integration"
-	"github.com/hyperledger/fabric-sdk-go/test/metadata"
+	"github.com/akorosmezey/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp"
+	bccspSw "github.com/akorosmezey/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp/factory/sw"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/client/channel"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/errors/retry"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/core"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/core/cryptosuite"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/core/cryptosuite/bccsp/wrapper"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fabsdk"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fabsdk/factory/defcore"
+	"github.com/akorosmezey/fabric-sdk-go/test/integration"
+	"github.com/akorosmezey/fabric-sdk-go/test/metadata"
 	"github.com/stretchr/testify/require"
 )
 

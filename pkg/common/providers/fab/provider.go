@@ -11,11 +11,11 @@ import (
 	"crypto/tls"
 	"time"
 
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/options"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/core"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/msp"
-	commtls "github.com/hyperledger/fabric-sdk-go/pkg/core/config/comm/tls"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fabsdk/metrics"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/options"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/core"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/msp"
+	commtls "github.com/akorosmezey/fabric-sdk-go/pkg/core/config/comm/tls"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fabsdk/metrics"
 	"google.golang.org/grpc"
 )
 

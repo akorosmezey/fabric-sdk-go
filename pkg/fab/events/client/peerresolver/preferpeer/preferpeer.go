@@ -9,14 +9,14 @@ package preferpeer
 import (
 	"strings"
 
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/logging"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/options"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/context"
-	"github.com/hyperledger/fabric-sdk-go/pkg/common/providers/fab"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fab/events/client/peerresolver"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fab/events/client/peerresolver/minblockheight"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fab/events/client/peerresolver/preferorg"
-	"github.com/hyperledger/fabric-sdk-go/pkg/fab/events/service"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/logging"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/options"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/context"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/common/providers/fab"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fab/events/client/peerresolver"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fab/events/client/peerresolver/minblockheight"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fab/events/client/peerresolver/preferorg"
+	"github.com/akorosmezey/fabric-sdk-go/pkg/fab/events/service"
 )
 
 var logger = logging.NewLogger("fabsdk/fab")
