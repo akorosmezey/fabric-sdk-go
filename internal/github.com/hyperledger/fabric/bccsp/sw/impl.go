@@ -22,6 +22,7 @@ package sw
 import (
 	"hash"
 	"reflect"
+  "fmt"
 
 	"github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/bccsp"
 	flogging "github.com/hyperledger/fabric-sdk-go/internal/github.com/hyperledger/fabric/sdkpatch/logbridge"
@@ -144,7 +145,19 @@ func (csp *CSP) KeyImport(raw interface{}, opts bccsp.KeyImportOpts) (k bccsp.Ke
 		return nil, errors.New("Invalid opts. It must not be nil.")
 	}
 
-	keyImporter, found := csp.KeyImporters[reflect.TypeOf(opts)]
+  fmt.Printf("Available importers: %v, looking for %T (%v), %v; %v\n", csp.KeyImporters, opts, opts, reflect.TypeOf(opts), csp.KeyImporters[reflect.TypeOf(opts)])
+
+  found := false
+  var keyImporter KeyImporter
+  for k, v := range csp.KeyImporters {
+    fmt.Printf("Comparing key %v to %T\n", k, opts)
+    if fmt.Sprintf("%v", k) == fmt.Sprintf("%T", opts) {
+      fmt.Printf("Key %v found!\n", k)
+      keyImporter = v
+      found = true
+    }
+  }
+	//keyImporter, found := csp.KeyImporters[reflect.TypeOf(opts)]
 	if !found {
 		return nil, errors.Errorf("Unsupported 'KeyImportOpts' provided [%v]", opts)
 	}
