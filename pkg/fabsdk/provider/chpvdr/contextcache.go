@@ -50,11 +50,12 @@ func newContextCache(ctx fab.ClientContext, opts []options.Opt) *contextCache {
 	c.chCfgCache = cfgCacheProvider(append(opts, chconfig.WithRefreshInterval(chConfigRefresh))...)
 	c.membershipCache = membership.NewRefCache(membershipRefresh)
 
+  dOpts := append(opts, WithLocalDiscovery(ctx.LocalDiscoveryProvider()))
 	c.discoveryServiceCache = lazycache.New(
 		"Discovery_Service_Cache",
 		func(key lazycache.Key) (interface{}, error) {
 			ck := key.(*cacheKey)
-			return c.createDiscoveryService(ck.channelConfig, opts...)
+			return c.createDiscoveryService(ck.channelConfig, dOpts...)
 		},
 	)
 
@@ -111,12 +112,19 @@ func (c *contextCache) createEventClient(chConfig fab.ChannelCfg, opts ...option
 
 func (c *contextCache) createDiscoveryService(chConfig fab.ChannelCfg, opts ...options.Opt) (fab.DiscoveryService, error) {
 	if chConfig.HasCapability(fab.ApplicationGroupKey, fab.V1_2Capability) {
-		logger.Debugf("Using Dynamic Discovery based on V1_2 capability.")
-		membership, err := c.GetMembership(chConfig.ID())
-		if err != nil {
-			return nil, errors.WithMessage(err, "failed to create discovery service")
-		}
-		return dynamicdiscovery.NewChannelService(c.ctx, membership, chConfig.ID(), opts...)
+    logger.Debugf("createDiscoveryService: using config %v, opts %v\n", chConfig, opts)
+    params := newDefaultProviderParams()
+    options.Apply(params, opts)
+    if lp, ok := params.localProvider.(*dynamicdiscovery.LocalProvider); ok {
+      logger.Debugf("Using Dynamic Discovery based on V1_2 capability: %T", lp)
+      membership, err := c.GetMembership(chConfig.ID())
+      if err != nil {
+        return nil, errors.WithMessage(err, "failed to create discovery service")
+      }
+      return dynamicdiscovery.NewChannelService(c.ctx, membership, chConfig.ID(), opts...)
+    } else {
+      return staticdiscovery.NewService(c.ctx.EndpointConfig(), c.ctx.InfraProvider(), chConfig.ID())
+    }
 	}
 	return staticdiscovery.NewService(c.ctx.EndpointConfig(), c.ctx.InfraProvider(), chConfig.ID())
 }
